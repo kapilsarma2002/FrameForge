@@ -13,6 +13,8 @@ const InputSection = () => {
     if (!prompt.trim()) return;
     
     setIsGenerating(true);
+
+    console.log('user prompt: ', prompt)
     
     // Simulate API call
     setTimeout(() => {
@@ -26,13 +28,13 @@ const InputSection = () => {
   };
 
   return (
-    <section id="input-section" className="py-20 px-4 max-w-5xl mx-auto">
+    <section id="input-section" className="py-20 px-4 w-7xl w-1/2 mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">What would you like to visualize?</h2>
       
       <Card className="glass-card p-6 md:p-8 relative overflow-hidden">
         <Textarea 
           placeholder="Describe your visualization, e.g., 'Show me a visual representation of a web request from client to server to database and back'"
-          className="min-h-[150px] bg-transparent border border-white/10 text-lg focus-visible:ring-primary/30"
+          className="min-h-[200px] bg-transparent border border-white/10 text-lg focus-visible:ring-primary/30"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
